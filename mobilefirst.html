@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile First</title>
+    <link rel="stylesheet" href="estilos/style.css" media="all">
+    <link rel="stylesheet" href="estilos/mediaquery.css">
+</head>
+<body>
+    <header>
+        <section>
+            <h1>
+                Clique no Ícone
+            </h1>
+        </section>
+    </header>
+    <main>
+        <section id="iphone">
+            <iframe src="" frameborder="0" name="tela" id="tela">
+                <p>Seu navegador não é compatível</p>
+            </iframe>
+        </section>
+        <section id="tablet">
+            <iframe src="" frameborder="0" id="tela2" name="tela2">
+                <p>Seu navegador não é compatível</p>
+            </iframe>
+        </section>
+        <section id="pc">
+            <iframe src="" frameborder="0" id="tela3" name="tela3">
+                <p>Seu navegador não é compatível</p>
+            </iframe>
+        </section>
+        <section id="tv">
+            <iframe src="" frameborder="0" id="tela4" name="tela4">
+                <p>Seu navegador não é compatível</p>
+            </iframe>
+        </section>
+
+        </section>
+        <section id="typical">
+            <a href="telaiphone.html" target="tela"><img id="phone" src="imagens1/icon-phone.png" alt="Celular"></a>
+            <a href="telatablet.html" target="tela2"><img id="tablet" src="imagens1/icon-tablet.png" alt="Tablet"></a><br>
+            <a href="telapc.html" target="tela3"><img id="pc" src="imagens1/icon-pc.png" alt=""></a><br>
+            <a href="telatv.html" target="tela4"><img id="tv" src="imagens1/icon-tv.png" alt=""></a>
+        </section>
+    </main>
+    <script> const iframe = document.getElementById('tela'); iframe.addEventListener('load', () => { 
+        iframe.classList.add('loaded'); 
+    }); 
+    
+    const links = document.querySelectorAll
+    ('section#typical a[target="tela"]'); 
+    links.forEach(link => { 
+        link.addEventListener('click', () => { iframe.classList.remove('loaded'); }); }); 
+    </script>
+
+    <script>
+        const iframeTablet = document.getElementById('tela2');
+        iframeTablet.addEventListener('load', () => {
+            iframeTablet.classList.add('loaded');
+    });
+
+        const tabletLinks = document.querySelectorAll('section#typical a[target="tela2"]');
+        tabletLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                iframeTablet.classList.remove('loaded');
+            });
+        });
+    </script>
+
+    <script>
+        const iframepc = document.getElementById('tela3');
+        iframepc.addEventListener('load', () => {
+        iframepc.classList.add('loaded');
+    });
+
+        const pcLinks = document.querySelectorAll('section#typical a[target="tela3"]');
+        pcLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                iframepc.classList.remove('loaded');
+            });
+        });
+    </script>
+
+    <script>
+        const iframetv = document.getElementById('tela4');
+        iframetv.addEventListener('load', () => {
+        iframetv.classList.add('loaded');
+    });
+
+        const tvLinks = document.querySelectorAll('section#typical a[target="tela4"]');
+        tvLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                iframetv.classList.remove('loaded');
+            });
+        });
+    </script>
+
+</body>
+</html>
